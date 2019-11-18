@@ -1,0 +1,40 @@
+ {% extends 'base.html' %} {% block title %}
+<title>midi</title>{% endblock title %} {% block navbar %} {% endblock navbar %} {% block content %}
+<div class="container1">
+    {% for n in range(10) %}
+
+    <div class="white0" id="{{(10-n)*12+12}}" style="top:{{n*240}}px;"></div>
+    <span class="black" id="{{(10-n)*12+11}}" style="top:{{n*240+20}}px"></span>
+    <div class="white" id="{{(10-n)*12+10}}" style="top:{{n*240+30}}px"></div>
+    <span class="black" id="{{(10-n)*12+9}}" style="top:{{n*240+60}}px"></span>
+    <div class="white" id="{{(10-n)*12+8}}" style="top:{{n*240+70}}px"></div>
+    <span class="black" id="{{(10-n)*12+7}}" style="top:{{n*240+100}}px"></span>
+    <div class="white0" id="{{(10-n)*12+6}}" style="top:{{n*240+110}}px"></div>
+
+    <div class="white0" id="{{(10-n)*12+5}}" style="top:{{n*240+140}}px"></div>
+    <span class="black" id="{{(10-n)*12+4}}" style="top:{{n*240+160}}px"></span>
+    <div class="white" id="{{(10-n)*12+3}}" style="top:{{n*240+170}}px"></div>
+    <span class="black" id="{{(10-n)*12+2}}" style="top:{{n*240+200}}px"></span>
+    <div class="white0" id="{{(10-n)*12+1}}" style="top:{{n*240+210}}px"></div>
+
+    {% endfor %}
+    <div class="headtext">
+        {% for i in Data1%}
+        <div class='midi' style="border-radius:5px; border:#333 2px solid;background-color:rgb(33, 252, 88);height:20px;width:{{ i[1] }}px; left:{{ 90+i[0] }}px;top:{{ i[2] }}px">
+
+        </div>
+        {% endfor %} {% for i in Data2 %}
+        <div class='midi' style="border-radius:5px; border:#333 2px solid;background-color:blue;height:20px;width:{{ i[1] }}px; left:{{ 90+i[0] }}px;top:{{ i[2] }}px">
+
+        </div>
+        {% endfor %} {% for i in Data3 %}
+        <div class='midi' style="border-radius:5px; border:#333 2px solid;background-color:rgb(255, 123, 0);height:20px;width:{{ i[1] }}px; left:{{ 90+i[0] }}px;top:{{ i[2] }}px">
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+<script>
+    document.getElementsByClassName('headtext').scrollTop = 0; //通过scrollTop设置滚动到100位置
+</script>
